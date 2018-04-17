@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import { NavigationBar } from '../components';
+import { NavigationBar, Banner } from '../components';
 import '../style/Main.css';
 
 class Main extends Component {
@@ -8,13 +8,29 @@ class Main extends Component {
     super(props);
 
     this.state = {
-      isSignIn: false
+      isSignIn: false,
+      who_card_display: 'none'
     }
+
+    this.whoCardOn = this.whoCardOn.bind(this);
+    this.whoCardOff = this.whoCardOff.bind(this);
   }
 
   userInfo(isSignIn) {
     if (!isSignIn) return <SignIn />;
     return <UserInfo />;
+  }
+
+  whoCardOn() {
+    this.setState({
+      who_card_display: 'block'
+    });
+  }
+
+  whoCardOff() {
+    this.setState({
+      who_card_display: 'none'
+    });
   }
 
   render() {
@@ -23,7 +39,13 @@ class Main extends Component {
         <header>
           {NavigationBar(this.userInfo(this.state.isSignIn))}
         </header>
-        <section className="container"></section>
+        <section>
+          {Banner(
+            new Intl.NumberFormat().format(2051152), 
+            this.state.who_card_display, 
+            this.whoCardOn, 
+            this.whoCardOff)}
+        </section>
       </div>
     );
   }
