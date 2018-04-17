@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { NavigationBar } from '../components';
+import '../style/Main.css';
 
 class Main extends Component {
   constructor(props) {
@@ -19,7 +20,10 @@ class Main extends Component {
   render() {
     return (
       <div>
-        {NavigationBar(this.userInfo(this.state.isSignIn))}
+        <header>
+          {NavigationBar(this.userInfo(this.state.isSignIn))}
+        </header>
+        <section className="container"></section>
       </div>
     );
   }
