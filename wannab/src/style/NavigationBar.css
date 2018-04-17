@@ -1,0 +1,71 @@
+#top_navigation {
+  width: calc(100% - 200px);
+  height: 55px;
+  padding-left: 100px;
+  padding-right: 100px;
+  background: #1d1d1d;
+  font-family: "NanumSquareRound";
+}
+
+/* Navigation contents */
+#logo {
+  float: left;
+  font-size: 0;
+  position: relative;
+  height: 55px;
+}
+
+#logo > img {
+  height: 45px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#logo > img:hover {
+  cursor: pointer;
+}
+
+#navigation_items {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#navigation_items > ul {
+  height: 55px;
+  margin: 0;
+  padding: 0;
+  display: table-row;
+  list-style: none;
+}
+
+#navigation_items > ul > li {
+  display: table-cell;
+  vertical-align: middle;
+  color: #fff;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#navigation_items > ul > li:hover {
+  cursor: pointer;
+}
+
+#user_info {
+  width: 44px;
+  height: 55px;
+  float: right;
+  color: #fff;
+  position: relative;
+}
+
+#user_info #sign_in_btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#user_info #sign_in_btn:hover {
+  cursor: pointer;
+}
