@@ -13,7 +13,7 @@ const Banner = (subscribe_number, who_card_display, whoCardOn, whoCardOff) => {
         </div>
       </div>
       <div id="banner_phrase">
-        가조쿠들과 소통하는 Creator
+        시청자들과 소통하는 Creator
       </div>
       <div id="banner_item">
         <div id="who_button" onMouseEnter={whoCardOn} onMouseLeave={whoCardOff}>

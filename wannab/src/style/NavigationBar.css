@@ -61,8 +61,8 @@
   display: table-cell;
   vertical-align: middle;
   color: #fff;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 #navigation_items > ul > li:hover {
@@ -85,4 +85,115 @@
 
 #user_info #sign_in_btn:hover {
   cursor: pointer;
+}
+
+/* list article container */
+.list_title {
+  font-size: 28px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+#editor::after {
+  content: "Creator의 영상에 가치를 부여합니다.";
+  font-size: 14px;
+  font-weight: 300;
+  margin-left: 10px;
+}
+
+#creator::after {
+  content: "YouTube 콘텐츠를 개발하고 이야기를 전달합니다.";
+  font-size: 14px;
+  font-weight: 300;
+  margin-left: 10px;
+}
+
+.info_card_list {
+  width: 100%;
+  font-size: 0;
+}
+
+.info_card {
+  display: inline-block;
+  width: 175px;
+  height: 175px;
+  margin: 10px;
+  background: #000;
+  position: relative;
+  border-radius: 5px;
+}
+
+.info_card:first-of-type {
+  margin-left: 0;
+}
+
+.info_card:hover {
+  cursor: pointer;
+}
+
+.info_card:hover .profile_image > .cover {
+  opacity: 0.8;
+  transition: .5s;
+}
+
+.info_card:hover .profile {
+  opacity: 1;
+  transition: .5s;
+}
+
+.info_card:hover .profile_name {
+  opacity: 0;
+}
+
+.info_card .profile_image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.info_card .profile_image > img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.info_card .profile_image > .cover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  background: #000;
+  opacity: 0.5;
+  transition: .5s;
+}
+
+.info_card .profile_name {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 22px;
+  color: #fff;
+  opacity: 1;
+  transition: .5s;
+}
+
+.info_card .profile {
+  width: 100%;
+  margin-left: 30px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  font-size: 12px;
+  line-height: 30px;
+  opacity: 0;
+  transition: .5s;
 }
