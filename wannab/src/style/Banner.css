@@ -61,6 +61,8 @@
   position: absolute;
   top: 50%;
   left: 50%;
+  font-size: 16px;
+  transition: .5s;
   transform: translate(-50%, -50%);
 }
 
@@ -74,6 +76,7 @@
 
 #banner_item #who_button:hover {
   cursor: pointer;
+  opacity: .9;
 }
 
 #who_card_wrapper {
@@ -115,10 +118,12 @@
   right: 0;
   margin-right: 10px;
   transform: translateY(-50%);
+  line-height: 25px;
 }
 
 #who_card #who_profile #channel_name {
   font-size: 20px;
+  font-weight: bold;
 }
 
 #who_card #who_profile #subscribe_number {

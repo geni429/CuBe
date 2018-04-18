@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import { NavigationBar, Banner } from '../components';
+import { NavigationBar, Banner, IntroduceSummary } from '../components';
 import creatorImg1 from '../res/ex_who.jpg';
 import creatorImg2 from '../res/ex_creator_1.jpg';
 import creatorImg3 from '../res/ex_creator_2.jpg';
@@ -142,6 +142,7 @@ class Main extends Component {
               this.whoCardOff)}
           </article>
           <article className="container">
+            {IntroduceSummary()}
             <div id="editor" className="list_title">영상 편집자</div>
             <div className="info_card_list">
               {this.state.editors.map((editor, index) => {
@@ -149,9 +150,10 @@ class Main extends Component {
                   editor.profileImg, 
                   editor.name,
                   editor.year,
-                  editor.tool
-                )
-              })}
+                  editor.tool,
+                  {key: index})
+                })
+              }
             </div>
             <div id="creator" className="list_title">크리에이터</div>
             <div className="info_card_list">
@@ -161,7 +163,8 @@ class Main extends Component {
                   creator.name,
                   creator.field,
                   creator.subscriber_number,
-                  creator.year)
+                  creator.year,
+                  {key: index})
               })}
             </div>
           </article>
