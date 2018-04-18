@@ -1,0 +1,38 @@
+.brand {
+  float: left;
+  font-size: 0;
+}
+
+.brand:hover {
+  cursor: pointer;
+}
+
+.icon {
+  display: inline-block;
+  width: 50px;
+  height: 55px;
+  font-size: 0;
+  position: relative;
+}
+
+.icon > img {
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.logo {
+  display: inline-block;
+  font-size: 0;
+  position: relative;
+  width: 80px;
+  height: 55px;
+}
+
+.logo > img {
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
