@@ -3,7 +3,7 @@ import BannerImg1 from '../res/ex_banner_img_1.jpg';
 import CreatorImg from '../res/ex_who.jpg';
 import '../style/Banner.css';
 
-const Banner = (subscribe_number, who_card_display, whoCardOn, whoCardOff) => {
+const Banner = (subscribe_number, who_card_display, whoCardOn, whoCardOff, phraseOpacity) => {
   return (
     <div id="banner">
       <div id="banner_img_wrapper">
@@ -12,7 +12,7 @@ const Banner = (subscribe_number, who_card_display, whoCardOn, whoCardOff) => {
           <img src={BannerImg1} />
         </div>
       </div>
-      <div id="banner_phrase">
+      <div id="banner_phrase" style={{ opacity: phraseOpacity }}>
         시청자들과 소통하는 Creator
       </div>
       <div id="banner_item">
