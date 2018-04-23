@@ -8,3 +8,56 @@ body {
   width: 1170px;
   margin: auto;
 }
+
+
+/* Relative layout */
+/* 1) Element must child element. */
+/* 2) Parent element position must relative. */
+.align_parent_top {
+  position: absolute;
+  top: 0;
+}
+
+.align_parent_bottom {
+  position: absolute;
+  bottom: 0;
+}
+
+.align_parent_left {
+  position: absolute;
+  left: 0;
+}
+
+.align_parent_right {
+  position: absolute;
+  right: 0;
+}
+
+.center_in_parent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.center_horizontal {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.center_vertical {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Font */
+
+/* Primary font white */
+.pr_ft_white {
+  font-size: 16px;
+  color: #fff;
+}
+
+.ft_bold { font-weight: bold; }

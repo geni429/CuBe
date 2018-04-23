@@ -5,11 +5,6 @@
 }
 
 /* Navigation contents */
-#navigation_items {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
 
 #navigation_items > ul {
   height: 55px;
@@ -39,12 +34,6 @@
   position: relative;
 }
 
-#user_info #sign_in_btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-#user_info #sign_in_btn:hover {
+#sign_in_btn:hover {
   cursor: pointer;
 }

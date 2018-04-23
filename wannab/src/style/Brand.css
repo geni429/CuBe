@@ -17,9 +17,6 @@
 
 .icon > img {
   height: 40px;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
 .logo {
@@ -32,7 +29,4 @@
 
 .logo > img {
   height: 40px;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
 }

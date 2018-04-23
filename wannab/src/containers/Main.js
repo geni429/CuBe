@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import { NavigationBar, Banner, IntroduceSummary, Brand } from '../components';
+import { NavigationBar, Banner, IntroduceSummary, Brand, Footer, Weekly, InfoCardList } from '../components';
 import creatorImg1 from '../res/ex_who.jpg';
 import creatorImg2 from '../res/ex_creator_1.jpg';
 import creatorImg3 from '../res/ex_creator_2.jpg';
@@ -13,6 +13,7 @@ import editorImg3 from '../res/ex_editor_3.jpeg';
 import editorImg4 from '../res/ex_editor_4.jpeg';
 import editorImg5 from '../res/ex_editor_5.jpeg';
 import editorImg6 from '../res/ex_editor_6.png';
+import bannerImg from '../res/ex_banner_img_1.jpg'
 import '../style/Main.css';
 
 class Main extends Component {
@@ -21,91 +22,105 @@ class Main extends Component {
 
     this.state = {
       isSignIn: false,
-      who_card_display: 'none',
+      whoCardDisplay: 'none',
       editors: [
         { 
           name: 'geni429',
           profileImg: editorImg1,
-          year: '1년',
-          tool: 'XD'
+          yearInCareer: '1년',
+          useTool: 'XD'
         },
         { 
           name: 'planB',
           profileImg: editorImg2,
-          year: '2년',
-          tool: 'PS'
+          yearInCareer: '2년',
+          useTool: 'PS'
         },
         { 
           name: 'W-Vertex',
           profileImg: editorImg3,
-          year: '3년',
-          tool: 'Sketch'
+          yearInCareer: '3년',
+          useTool: 'Sketch'
         },
         { 
           name: 'jieun',
           profileImg: editorImg4,
-          year: '1개월',
-          tool: 'Oven'
+          yearInCareer: '1개월',
+          useTool: 'Oven'
         },
         { 
           name: 'Nooheat',
           profileImg: editorImg5,
-          year: '5년',
-          tool: 'AI'
+          yearInCareer: '5년',
+          useTool: 'AI'
         },
         { 
           name: 'yeon',
           profileImg: editorImg6,
-          year: '10년',
-          tool: 'C4D'
+          yearInCareer: '10년',
+          useTool: 'C4D'
         },
       ],
       creators: [
         { 
-          name: '보겸', 
+          name: '보겸',
           profileImg: creatorImg1,
+          channelName: '보겸 TV',
           field: '게임/토크',
-          subscriber_number: new Intl.NumberFormat().format(2051152),
-          year: '4년'
+          subscriberCount: new Intl.NumberFormat().format(2051152),
+          yearInCareer: '4년'
         },
         { 
           name: '잇섭', 
           profileImg: creatorImg2,
+          channelName: 'ITSub잇섭',
           field: 'IT/리뷰',
-          subscriber_number: new Intl.NumberFormat().format(192611),
-          year: '2년'
+          subscriberCount: new Intl.NumberFormat().format(192611),
+          yearInCareer: '2년'
         },
         { 
           name: '대도서관', 
           profileImg: creatorImg3,
+          channelName: '대도서관TV',
           field: '게임/토크',
-          subscriber_number: new Intl.NumberFormat().format(1707421),
-          year: '4년'
+          subscriberCount: new Intl.NumberFormat().format(1707421),
+          yearInCareer: '4년'
         },
         { 
           name: '이사배', 
           profileImg: creatorImg4,
+          channelName: 'RISABE',
           field: '뷰티',
-          subscriber_number: new Intl.NumberFormat().format(1571972),
-          year: '4년'
+          subscriberCount: new Intl.NumberFormat().format(1571972),
+          yearInCareer: '4년'
         },
         { 
           name: '윽박', 
           profileImg: creatorImg5,
+          channelName: '최고다윽박',
           field: '야생/다큐',
-          subscriber_number: new Intl.NumberFormat().format(961784),
-          year: '1년'
+          subscriberCount: new Intl.NumberFormat().format(961784),
+          yearInCareer: '1년'
         },
         { 
-          name: '/공대생네 가족', 
+          name: '공대생네 가족', 
           profileImg: creatorImg6,
+          channelName: '/공대생네 가족',
           field: '실험',
-          subscriber_number: new Intl.NumberFormat().format(553861),
-          year: '1년'
+          subscriberCount: new Intl.NumberFormat().format(553861),
+          yearInCareer: '1년'
         },
       ],
-      header_margin_top: 0,
-      header_phrase_opacity: 1
+      headerMarginTop: 0,
+      headerPhraseOpacity: 1,
+      weeklyYoutubeLink: 'https://www.youtube.com/embed/-ASahQw6cWc',
+      bannerContent: {
+        profileImg: creatorImg1,
+        channelName: '보겸 TV',
+        subscriberCount: new Intl.NumberFormat().format(2051152),
+        bannerPhrase: '시청자들과 소통하는 Creator',
+        bannerImg: bannerImg
+      }
     }
 
     this.whoCardOn = this.whoCardOn.bind(this);
@@ -120,13 +135,13 @@ class Main extends Component {
 
   whoCardOn() {
     this.setState({
-      who_card_display: 'block'
+      whoCardDisplay: 'block'
     });
   }
 
   whoCardOff() {
     this.setState({
-      who_card_display: 'none'
+      whoCardDisplay: 'none'
     });
   }
 
@@ -136,169 +151,45 @@ class Main extends Component {
 
   headerCoverUp() {
     this.setState({
-      header_margin_top: window.scrollY / 4,
-      header_phrase_opacity: 1 - window.scrollY / 250
+      headerMarginTop: window.scrollY / 4,
+      headerPhraseOpacity: 1 - window.scrollY / 250
     });
   }
 
   render() {
     return (
       <div>
-        <header id="main_header" style={{ marginTop: `-${this.state.header_margin_top}px` }}>
+        <header id="main_header" style={{ marginTop: `-${this.state.headerMarginTop}px` }}>
           {NavigationBar(this.userInfo(this.state.isSignIn))}
           <article>
             {Banner(
-              new Intl.NumberFormat().format(2051152), 
-              this.state.who_card_display, 
+              this.state.bannerContent,
+              this.state.whoCardDisplay, 
               this.whoCardOn,
               this.whoCardOff,
-              this.state.header_phrase_opacity)}
+              this.state.headerPhraseOpacity)}
           </article>
         </header>
         <section id="main_section">
           <article className="container">
             {IntroduceSummary()}
-            <div id="editor" className="list_title">영상 편집자</div>
-            <div className="info_card_list">
-              {this.state.editors.map((editor, index) => {
-                return EditorInfoCard(
-                  editor.profileImg, 
-                  editor.name,
-                  editor.year,
-                  editor.tool,
-                  {key: index})
-                })
-              }
-            </div>
-            <div id="creator" className="list_title">크리에이터</div>
-            <div className="info_card_list">
-              {this.state.creators.map((creator, index) => {
-                return CreatorInfoCard(
-                  creator.profileImg, 
-                  creator.name,
-                  creator.field,
-                  creator.subscriber_number,
-                  creator.year,
-                  {key: index})
-              })}
-            </div>
-            <div id="weekly" className="list_title">금주의 영상</div>
-            <div id="weekly_wrapper">
-              <div id="weekly_youtube">
-                <iframe frameBorder="0" src="https://www.youtube.com/embed/-ASahQw6cWc"></iframe>
-              </div>
-              <div id="weekly_youtube_member">
-                <div id="weekly_creator">
-                  <div className="profile">
-                    <div className="profile_image">
-                      <img src={creatorImg2} />
-                    </div>
-                    <div className="info">
-                      <div className="channel_name">ITSub잇섭</div>
-                      <div className="info_content">분야: IT/리뷰</div>
-                    </div>
-                  </div>
-                  <div className="weekly_why">
-                    <div>Why?</div>
-                    <div className="line"></div>
-                    <div>누군가는 가성비가 좋다고 추천할 수 있는 것을 솔직한 자신의 생각을 표현함으로써 진실성이 보였습니다.</div>
-                  </div>
-                </div>
-                <div id="weekly_editor">
-                  <div className="profile">
-                    <div className="profile_image">
-                      <img src={editorImg1} />
-                    </div>
-                    <div className="info">
-                      <div className="channel_name">geni429</div>
-                      <div className="info_content">경력: 1년</div>
-                    </div>
-                  </div>
-                  <div className="weekly_why">
-                    <div>Why?</div>
-                    <div className="line"></div>
-                    <div>적절한 시점에 등장하는 자막, 크리에이터가 전달하고자하는 내용을 편집으로서 잘 담았습니다.</div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            {InfoCardList('editor', this.state.editors)}
+            {InfoCardList('creator', this.state.creators)}
+            {Weekly(this.state.weeklyYoutubeLink, creatorImg2, editorImg1)}
           </article>
         </section>
-        <footer id="main_footer">
-          <div className="container">
-            <div id="footer_content">
-              <div className="footer_list">
-                <div className="footer_list_title">WannaB</div>
-                <ul className="footer_list_items">
-                  <li>서비스 소개</li>
-                  <li>개발자 소개</li>
-                  <li>Creator란?</li>
-                </ul>
-              </div>
-              <div className="footer_list">
-                <div className="footer_list_title">구인/구직하기</div>
-                <ul className="footer_list_items">
-                  <li>Creator 탐색</li>
-                  <li>영상 편집자 탐색</li>
-                  <li>그 외 다른 직종</li>
-                </ul>
-              </div>
-            </div>
-            <div id="footer_info">
-              <div>{Brand()}</div>
-              <div className="footer_legal_link">개인정보 처리방침</div>
-              <div className="footer_legal_link">약관</div>
-            </div>
-          </div>
-        </footer>
+        {Footer()}
       </div>
     );
   }
 }
 
 const SignIn = () => {
-  return <div id="sign_in_btn">로그인</div>;
+  return <div id="sign_in_btn" className="center_vertical">로그인</div>;
 }
 
 const UserInfo = () => {
   return <div>UserInfo</div>;
-}
-
-const EditorInfoCard = (profile_image, name, year, tool) => {
-  return (
-    <div className="info_card">
-      <div className="profile_image">
-        <img src={profile_image} />
-        <div className="cover"></div>
-      </div>
-      <div className="profile_name">
-        <span>{name}</span>
-      </div>
-      <div className="profile">
-        <div>경력: {year}</div>
-        <div>사용 툴: {tool}</div>
-      </div>
-    </div>
-  );
-}
-
-const CreatorInfoCard = (profile_image, name, field, subscriber_number, year) => {
-  return (
-    <div className="info_card">
-      <div className="profile_image">
-        <img src={profile_image} />
-        <div className="cover"></div>
-      </div>
-      <div className="profile_name">
-        <span>{name}</span>
-      </div>
-      <div className="profile">
-        <div>분야: {field}</div>
-        <div>구독자: {subscriber_number}명</div>
-        <div>활동 경력: {year}</div>
-      </div>
-    </div>
-  );
 }
 
 export default Main;

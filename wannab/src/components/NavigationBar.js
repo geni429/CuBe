@@ -7,7 +7,7 @@ const NavigationBar = (userInfo, visibility) => {
     <nav id="top_navigation">
       <div className="container">
         {Brand()}
-        <div id="navigation_items">
+        <div id="navigation_items" className="center_horizontal">
           <ul>
             <li>Creator</li>
             <li>편집자</li>

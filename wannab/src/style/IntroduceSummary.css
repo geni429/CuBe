@@ -6,26 +6,23 @@
   overflow: hidden;
 }
 
-#introduce_summary_content > header {
+#introduce_summary header {
   font-size: 36px;
   margin-bottom: 10px;
-  z-index: 2;
 }
 
-#introduce_summary_content > section {
+#introduce_summary section {
   font-size: 12px;
-  z-index: 2;
 }
 
-.bold {
-  font-weight: bold;
+#introduce_summary .wave {
+  position: absolute;
+  top: 70%;
 }
 
 .wave {
   width: 1170px;
   height: 1150px;
-  position: absolute;
-  top: 70%;
   border-radius: 43%;
   opacity: .1;
 }
@@ -46,11 +43,4 @@
 @keyframes drift {
   from { transform: rotate(0deg); }
   from { transform: rotate(360deg); }
-}
-
-#introduce_summary_content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }

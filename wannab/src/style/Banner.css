@@ -41,32 +41,19 @@
 #banner_phrase {
   color: #fff;
   font-size: 36px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   z-index: 2;
 }
 
 #banner_item {
-  position: absolute;
   top: 85%;
-  left: 50%;
-  transform: translateX(-50%);
   z-index: 2;
 }
 
-#banner_item #who_button > span {
-  color: #fff;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  font-size: 16px;
+#who_button > span {
   transition: .5s;
-  transform: translate(-50%, -50%);
 }
 
-#banner_item #who_button {
+#who_button {
   width: 80px;
   height: 50px;
   position: relative;
@@ -74,16 +61,13 @@
   border-radius: 5px;
 }
 
-#banner_item #who_button:hover {
+#who_button:hover {
   cursor: pointer;
   opacity: .9;
 }
 
 #who_card_wrapper {
-  position: absolute;
   top: 60%;
-  left: 50%;
-  transform: translateX(-50%);
   z-index: 3;
 }
 
@@ -96,28 +80,22 @@
   position: relative;
 }
 
-#who_card #who_img {
+#who_img {
   display: inline-block;
   position: relative;
   height: 100%;
   margin-left: 10px;
 }
 
-#who_card #who_img img {
+#who_img img {
   width: 60px;
   border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
-#who_card #who_profile {
+#who_profile {
   float: right;
-  position: absolute;
-  top: 50%;
   right: 0;
   margin-right: 10px;
-  transform: translateY(-50%);
   line-height: 25px;
 }
 

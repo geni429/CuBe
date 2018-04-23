@@ -7,10 +7,10 @@ const Brand = () => {
   return (
     <div className="brand">
       <div className="icon">
-        <img src={Wannafish} />
+        <img className="center_vertical" src={Wannafish} />
       </div>
       <div className="logo">
-        <img src={Logo} />
+        <img className="center_vertical" src={Logo} />
       </div>
     </div>
   );

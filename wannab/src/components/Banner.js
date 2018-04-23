@@ -1,33 +1,32 @@
 import React from 'react';
-import BannerImg1 from '../res/ex_banner_img_1.jpg';
-import CreatorImg from '../res/ex_who.jpg';
+import classNames from 'classnames';
 import '../style/Banner.css';
 
-const Banner = (subscribe_number, who_card_display, whoCardOn, whoCardOff, phraseOpacity) => {
+const Banner = (bannerContent, whoCardDisplay, whoCardOn, whoCardOff, phraseOpacity) => {
   return (
     <div id="banner">
       <div id="banner_img_wrapper">
         <div id="banner_img">
           <div id="banner_cover"></div>
-          <img src={BannerImg1} />
+          <img src={bannerContent.bannerImg} />
         </div>
       </div>
-      <div id="banner_phrase" style={{ opacity: phraseOpacity }}>
-        시청자들과 소통하는 Creator
+      <div id="banner_phrase" className="center_in_parent" style={{ opacity: phraseOpacity }}>
+        {bannerContent.bannerPhrase}
       </div>
-      <div id="banner_item">
+      <div id="banner_item" className="center_horizontal">
         <div id="who_button" onMouseEnter={whoCardOn} onMouseLeave={whoCardOff}>
-          <span>Who?</span>
+          <span className={classNames("center_in_parent", "pr_ft_white")}>Who?</span>
         </div>
       </div>
-      <div id="who_card_wrapper" style={{ display: who_card_display }}>
+      <div id="who_card_wrapper" className="center_horizontal" style={{ display: whoCardDisplay }}>
         <div id="who_card">
           <div id="who_img">
-            <img src={CreatorImg} />
+            <img className="center_vertical" src={bannerContent.profileImg} />
           </div>
-          <div id="who_profile">
-            <div id="channel_name">보겸 TV</div>
-            <div id="subscribe_number">구독자 {subscribe_number}명</div>
+          <div id="who_profile" className="center_vertical">
+            <div id="channel_name">{bannerContent.channelName}</div>
+            <div id="subscribe_number">구독자 {bannerContent.subscriberCount}명</div>
           </div>
         </div>
         <div className="arrow_down"></div>
