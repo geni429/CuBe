@@ -61,3 +61,10 @@ body {
 }
 
 .ft_bold { font-weight: bold; }
+
+.wh_line {
+  width: 100%;
+  height: 1px;
+  background: #fff;
+  margin-bottom: 5px;
+}

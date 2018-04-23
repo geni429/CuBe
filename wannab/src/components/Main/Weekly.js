@@ -1,4 +1,5 @@
 import React from 'react';
+import './style/Weekly.css';
 
 const Weekly = (weeklyYoutubeLink, weeklyCreator, weeklyEditor) => {
   return (
@@ -21,7 +22,7 @@ const Weekly = (weeklyYoutubeLink, weeklyCreator, weeklyEditor) => {
             </div>
             <div className="weekly_why">
               <div>Why?</div>
-              <div className="line"></div>
+              <div className="wh_line"></div>
               <div>누군가는 가성비가 좋다고 추천할 수 있는 것을 솔직한 자신의 생각을 표현함으로써 진실성이 보였습니다.</div>
             </div>
           </div>

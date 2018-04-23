@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import { NavigationBar, Banner, IntroduceSummary, Brand, Footer, Weekly, InfoCardList } from '../components';
-import creatorImg1 from '../res/ex_who.jpg';
-import creatorImg2 from '../res/ex_creator_1.jpg';
-import creatorImg3 from '../res/ex_creator_2.jpg';
-import creatorImg4 from '../res/ex_creator_3.jpg';
-import creatorImg5 from '../res/ex_creator_4.jpg';
-import creatorImg6 from '../res/ex_creator_5.jpg';
-import editorImg1 from '../res/ex_editor_1.png';
-import editorImg2 from '../res/ex_editor_2.png';
-import editorImg3 from '../res/ex_editor_3.jpeg';
-import editorImg4 from '../res/ex_editor_4.jpeg';
-import editorImg5 from '../res/ex_editor_5.jpeg';
-import editorImg6 from '../res/ex_editor_6.png';
-import bannerImg from '../res/ex_banner_img_1.jpg'
-import '../style/Main.css';
+import { NavigationBar, Banner, IntroduceSummary, Brand, Footer, Weekly, InfoCardList } from '../../components';
+import creatorImg1 from '../../res/ex_who.jpg';
+import creatorImg2 from '../../res/ex_creator_1.jpg';
+import creatorImg3 from '../../res/ex_creator_2.jpg';
+import creatorImg4 from '../../res/ex_creator_3.jpg';
+import creatorImg5 from '../../res/ex_creator_4.jpg';
+import creatorImg6 from '../../res/ex_creator_5.jpg';
+import editorImg1 from '../../res/ex_editor_1.png';
+import editorImg2 from '../../res/ex_editor_2.png';
+import editorImg3 from '../../res/ex_editor_3.jpeg';
+import editorImg4 from '../../res/ex_editor_4.jpeg';
+import editorImg5 from '../../res/ex_editor_5.jpeg';
+import editorImg6 from '../../res/ex_editor_6.png';
+import bannerImg from '../../res/ex_banner_img_1.jpg'
+import './Main.css';
 
 class Main extends Component {
   constructor(props) {

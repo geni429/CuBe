@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import '../style/Banner.css';
+import './style/Banner.css';
 
 const Banner = (bannerContent, whoCardDisplay, whoCardOn, whoCardOff, phraseOpacity) => {
   return (

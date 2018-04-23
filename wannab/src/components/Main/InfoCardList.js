@@ -1,5 +1,5 @@
 import React from 'react';
-import '../style/InfoCardList.css';
+import './style/InfoCardList.css';
 
 const InfoCardList = (job, registers) => {
   function registerList(job) {
