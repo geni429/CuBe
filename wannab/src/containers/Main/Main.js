@@ -185,7 +185,11 @@ class Main extends Component {
 }
 
 const SignIn = () => {
-  return <div id="sign_in_btn" className="center_vertical">로그인</div>;
+  return (
+    <div id="sign_in_btn" className="center_vertical">
+      <Link to="/signin">로그인</Link>
+    </div>
+  );
 }
 
 const UserInfo = () => {
