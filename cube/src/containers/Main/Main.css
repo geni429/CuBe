@@ -46,7 +46,7 @@
 }
 
 #main_part_1_get_start {
-  margin-top: 40px;
+  margin-top: 50px;
 }
 
 #main_part_1_get_start_email {
@@ -71,12 +71,6 @@
   color: rgb(192, 192, 192);
 }
 
-#main_part_1_get_start_email > input:focus {
-  border-color: rgb(5, 130, 247);
-  color: rgb(5, 130, 247);
-  transition: .3s;
-}
-
 #main_part_1_get_start_submit {
   display: inline-block;
   width: 130px;
@@ -90,4 +84,16 @@
 
 #main_part_1_get_start_submit:hover {
   cursor: pointer;
+}
+
+.email_form_correct {
+  border-color: rgb(5, 130, 247) !important;
+  color: rgb(5, 130, 247) !important;
+  transition: .3s;
+}
+
+.email_form_uncorrect {
+  border-color: rgb(185, 79, 85) !important;
+  color: rgb(185, 79, 85) !important;
+  transition: .3s;
 }

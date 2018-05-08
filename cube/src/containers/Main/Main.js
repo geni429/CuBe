@@ -5,6 +5,58 @@ import mainPart1BgImage from '../../res/main_part_1.jpg';
 import './Main.css';
 
 class Main extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      email: "",
+      isEmail: ""
+    }
+
+    this.isEmail = this.isEmail.bind(this);
+    this.inputStartEmail = this.inputStartEmail.bind(this);
+    this.inputBlur = this.inputBlur.bind(this);
+    this.inputFocus = this.inputFocus.bind(this);
+  }
+
+  inputStartEmail(e) {
+    console.log(e.target.value);
+    if (e.target.value) {
+      console.log(this.isEmail(e.target.value));
+      if (this.isEmail(e.target.value)) {
+        this.setState({
+          email: e.target.value,
+          isEmail: "email_form_correct"
+        });
+      } else {
+        this.setState({
+          isEmail: "email_form_uncorrect"
+        });
+      }
+    } else {
+      this.setState({
+        isEmail: "email_form_correct"
+      });
+    }
+  }
+
+  isEmail(value) {
+    let regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return regex.test(String(value).toLowerCase());
+  }
+
+  inputBlur() {
+    this.setState({
+      isEmail: ""
+    });
+  }
+
+  inputFocus() {
+    this.setState({
+      isEmail: "email_form_correct"
+    });
+  }
+
   render() {
     return (
       <div id="main_part_1">
@@ -22,7 +74,7 @@ class Main extends Component {
           </div>
           <div id="main_part_1_get_start">
             <div id="main_part_1_get_start_email">
-              <input placeholder="name@company.com" />
+              <input placeholder="name@company.com" className={this.state.isEmail} onChange={this.inputStartEmail} onBlur={this.inputBlur} onFocus={this.inputFocus} />
             </div>
             <div id="main_part_1_get_start_submit">
               <span className="center_in_parent">시작하기</span>
