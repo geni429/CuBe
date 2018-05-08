@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
+import { Link } from 'react-router-dom';
 import { TopNavigationBar } from '../../components';
 import mainPart1BgImage from '../../res/main_part_1.jpg';
 import './Main.css';
@@ -76,9 +77,11 @@ class Main extends Component {
             <div id="main_part_1_get_start_email">
               <input placeholder="name@company.com" className={this.state.isEmail} onChange={this.inputStartEmail} onBlur={this.inputBlur} onFocus={this.inputFocus} />
             </div>
-            <div id="main_part_1_get_start_submit">
-              <span className="center_in_parent">시작하기</span>
-            </div>
+            <Link to={`/verify/${this.state.email}`}>
+              <div id="main_part_1_get_start_submit">
+                <span className="center_in_parent">시작하기</span>
+              </div>
+            </Link>
           </div>
         </div>
       </div>

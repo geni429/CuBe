@@ -4,6 +4,10 @@ body {
   font-family: "NanumGothic";
 }
 
+a {
+  color: inherit;
+}
+
 .container {
   width: 1170px;
   margin: auto;

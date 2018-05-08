@@ -3,6 +3,7 @@
   height: 50px;
   background-color: #fff;
   position: fixed;
+  top: 0;
   box-shadow: 0 1px 10px 1px #3c3c3c;
   z-index: 9999;
 }
