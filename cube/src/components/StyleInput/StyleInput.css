@@ -1,0 +1,62 @@
+.style_input {
+  position: relative;
+}
+
+.style_input input {
+  width: 100%;
+  font-size: 15px;
+  outline: none;
+  border: 0;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+}
+
+.style_input input:focus ~ .input_line {
+  width: 100%;
+  transition: .4s;
+}
+
+.input_line {
+  width: 0;
+  height: 2px;
+  background-color: #3399FF;
+  position: absolute;
+  left: 0;
+  transition: .3s;
+}
+
+.input_header {
+  font-size: 15px;
+  color: rgb(117, 117, 117);
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  pointer-events: none;
+  transform-origin: bottom left;
+  transition: .3s;
+}
+
+.input_focus_event_nc {
+  transform: scale(.75) translateY(-39px);
+  color: #3399FF;
+  transition: .3s;
+}
+
+.input_focus_event_c {
+  color: #3399FF;
+  transition: .3s;
+}
+
+.input_blur_event {
+  transform: scale(.75) translateY(-39px);
+}
+
+.input_err_header {
+  color: #ff0000 !important;
+  transition: .3s;
+}
+
+.input_err_line {
+  background-color: #ff0000 !important;
+  transition: .3s;
+}

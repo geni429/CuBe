@@ -12,6 +12,7 @@ ReactDOM.render(
       <TopNavigationBar />
       <Switch>
         <Route path='/' component={ Main } exact />
+        <Route path='/signin' component={ SignIn } />
         <Route path='/verify/:email' component={ Verifying } />
         <Initializing />
       </Switch>

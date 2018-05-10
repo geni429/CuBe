@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
-import { SelectJob } from './components';
+import { SelectJob, SetPassword } from './components';
 import './Initializing.css';
 
 class Initializing extends Component {
@@ -8,6 +8,7 @@ class Initializing extends Component {
     return (
       <Switch>
         <Route path='/init/job' component={ SelectJob } />
+        <Route path='/init/password' component={ SetPassword } />
       </Switch>
     );
   }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import classNames from 'classnames';
 import creatorBtnImg from './res/creator_btn.jpg';
 import videoEditorBtnImg from './res/video_editor_btn.jpg';
@@ -10,19 +11,20 @@ class SelectJob extends Component {
     super(props);
 
     this.state = {
-      selectJob: "",
-      isCreator: "",
-      isVideoEditor: "",
-      isOthers: "",
-      isSelected: ""
+      selectJob: '',
+      isCreator: '',
+      isVideoEditor: '',
+      isOthers: '',
+      isSelected: ''
     }
 
     this.selectJob = this.selectJob.bind(this);
+    this.selectComplete = this.selectComplete.bind(this);
   }
 
   selectJob(e) {
     this.setState({
-      isSelected: "selected"
+      isSelected: 'init_task_complete'
     });
     switch (e.target.id) {
       case 'job_card_creator':
@@ -68,6 +70,11 @@ class SelectJob extends Component {
         }
         break;
     }
+  }
+
+  selectComplete() {
+    if (this.state.isSelected) 
+      this.props.history.push('/init/password');
   }
 
   render() {
@@ -120,7 +127,7 @@ class SelectJob extends Component {
           <div className={classNames("focus_border", this.state.isOthers)}></div>
         </div>
 
-        <div id="select_complete_btn" className={this.state.isSelected}>
+        <div className={classNames("init_task_complete_btn", this.state.isSelected)} onClick={this.selectComplete}>
           <span className="center_in_parent">선택 완료</span>
         </div>
       </div>
@@ -128,4 +135,4 @@ class SelectJob extends Component {
   }
 }
 
-export default SelectJob;
+export default withRouter(SelectJob);

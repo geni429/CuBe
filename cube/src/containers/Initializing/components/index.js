@@ -1,3 +1,4 @@
 import SelectJob from './SelectJob/SelectJob';
+import SetPassword from './SetPassword/SetPassword';
 
-export { SelectJob };
+export { SelectJob, SetPassword };
