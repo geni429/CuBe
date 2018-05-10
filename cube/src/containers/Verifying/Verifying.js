@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import loadingAnimImg from '../../res/loading_icon.gif';
 import './Verifying.css';
 
 class Verifying extends Component {
@@ -7,7 +8,7 @@ class Verifying extends Component {
       <div id="verify">
         <div className="center_in_parent">
           <div id="loading_anim">
-            <img src="http://a.top4top.net/p_1990j031.gif" className="center_horizontal" />
+            <img src={ loadingAnimImg } className="center_horizontal" />
           </div>
           <div id="verify_title">이메일을 확인해주세요.</div>
           <div id="verify_notice">

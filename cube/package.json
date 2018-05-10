@@ -1,6 +1,7 @@
 {
   "name": "cube",
-  "version": "0.2.5",
+  "version": "0.2.7",
+  "description": "CuBe is the best solution for creator.",
   "private": true,
   "dependencies": {
     "classnames": "^2.2.5",
