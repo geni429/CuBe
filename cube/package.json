@@ -1,19 +1,21 @@
 {
   "name": "cube",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "description": "CuBe is the best solution for creator.",
-  "private": true,
+  "repository": "https://github.com/geni429/CuBe",
+  "author": "geni429 <geni429@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
   "dependencies": {
     "classnames": "^2.2.5",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.4"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
   }
 }
