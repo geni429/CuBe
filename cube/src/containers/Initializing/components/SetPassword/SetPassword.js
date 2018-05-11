@@ -80,9 +80,9 @@ class SetPassword extends Component {
 
   render() {
     return (
-      <div id="personal_info" className="container">
+      <div id="init_set_password" className="container">
         <div className="init_title">비밀번호를 등록해주세요</div>
-        <div className="personal_info_input">
+        <div className="init_input">
           <StyleInput 
             inputHeader="비밀번호" 
             inputType="password"
@@ -90,7 +90,7 @@ class SetPassword extends Component {
             isError={this.state.isError} />
         </div>
         <div className="input_notice">비밀번호는 8자 이상으로 해주세요.</div>
-        <div className="personal_info_input">
+        <div className="init_input">
           <StyleInput 
             inputHeader="비밀번호 확인" 
             inputType="password"

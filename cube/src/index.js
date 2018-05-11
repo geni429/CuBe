@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import { Main, SignIn, Verifying, Initializing } from './containers';
@@ -8,7 +8,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
   <Router>
-    <div>
+    <Fragment>
       <TopNavigationBar />
       <Switch>
         <Route path='/' component={ Main } exact />
@@ -16,7 +16,7 @@ ReactDOM.render(
         <Route path='/verify/:email' component={ Verifying } />
         <Initializing />
       </Switch>
-    </div>
+    </Fragment>
   </Router>
 , document.getElementById('root'));
 registerServiceWorker();

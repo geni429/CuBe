@@ -6,7 +6,6 @@
   margin-bottom: 55px;
 }
 
-
 .init_task_complete_btn {
   width: 100px;
   height: 40px;
@@ -31,4 +30,10 @@
 
 .init_task_complete:hover {
   cursor: pointer;
+}
+
+.init_input {
+  width: 300px;
+  margin: auto;
+  margin-top: 50px;
 }
