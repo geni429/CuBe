@@ -7,7 +7,6 @@ const fs = require('fs');
 const Request = require('request');
 const jsdom = require('jsdom');
 const { JSDOM } = jsdom;
-const cheerio = require('cheerio');
 
 const server = new Hapi.Server({
   port: 3333,
@@ -34,33 +33,50 @@ const start = async () => {
     path: '/channel',
     handler: async (request, h) => {
       const channelLink = request.query.channelLink;
-      let options = {
-        url: channelLink,
-        headers: {
-          'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'
-        }
-      }
 
       let channelInfo = {
-        subscriberCount: 0
+        channelName: '',
+        subscriberCount: '',
+        views: '',
+        registerDate: ''
       }
-      
-      function parsing() {
+
+      function parsingAboutData() {
+        let options = {
+          url: `${channelLink}/about`,
+          headers: {
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'
+          }
+        }
+
         return new Promise((resolve, reject) => {
-          let data = Request(options, (error, response, body) => {
+          Request(options, (error, response, body) => {
             if (error) reject(error);
 
             const dom = new JSDOM(body).window.document;
-            let subscriberCount = dom.getElementsByClassName('yt-subscription-button-subscriber-count-branded-horizontal')[0].textContent.split(',').join('');
-            channelInfo.subscriberCount = Number.parseInt(subscriberCount);
+
+            let channelName = dom.querySelector('.qualified-channel-title-text a').textContent;
+            let subscriberCount = dom.querySelectorAll('.about-stats .about-stat')[0].textContent;
+            let views = dom.querySelectorAll('.about-stats .about-stat')[1].textContent;
+            let registerDate = dom.querySelectorAll('.about-stats .about-stat')[2].textContent;
+            let registerDateArr = registerDate.replace(/\./gi, '').split(' ');
+
+            channelInfo.channelName = channelName;
+            channelInfo.subscriberCount = subscriberCount.split(' ')[1].replace(/명/, '');
+            channelInfo.views = views.split(' ')[3].replace(/회/, '');
+            channelInfo.registerDate = {
+              year: registerDateArr[1],
+              month: registerDateArr[2],
+              day: registerDateArr[3]
+            };
 
             resolve(channelInfo);
           });
-        })
+        });
       }
 
       try {
-        let parsed = await parsing();
+        await parsingAboutData();
         
         return h.response(channelInfo).code(200);
       } catch(e) {
