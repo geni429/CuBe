@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
+import axios from 'axios';
 import { StyleInput } from '../../../../components';
 import './SetChannelInfo.css';
 
@@ -13,6 +14,7 @@ class SetChannelInfo extends Component {
     }
 
     this.inputChannelLink = this.inputChannelLink.bind(this);
+    this.getChannelInfo = this.getChannelInfo.bind(this);
   }
 
   inputChannelLink(e) {
@@ -29,6 +31,20 @@ class SetChannelInfo extends Component {
     }
   }
 
+  getChannelInfo() {
+    axios({
+      method: 'GET',
+      url: '/channel',
+      params: {
+        channelLink: this.state.channelLink
+      }
+    }).then(response => {
+      console.log(response);
+    }).catch(err => {
+      console.log(err);
+    });
+  }
+
   render() {
     console.log(this.state);
     return (
@@ -40,7 +56,7 @@ class SetChannelInfo extends Component {
             inputType="text"
             inputEvent={this.inputChannelLink} />
         </div>
-        <div className={classNames("init_task_complete_btn", this.state.isChannelLink)}>
+        <div className={classNames("init_task_complete_btn", this.state.isChannelLink)} onClick={this.getChannelInfo}>
           <span className="center_in_parent">불러오기</span>
         </div>
       </div>
