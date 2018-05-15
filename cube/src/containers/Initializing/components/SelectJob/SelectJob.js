@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import classNames from 'classnames';
+import InitCompleteBtn from '../InitCompleteBtn/InitCompleteBtn';
 import creatorBtnImg from './res/creator_btn.jpg';
 import videoEditorBtnImg from './res/video_editor_btn.jpg';
 import othersBtnImg from './res/others_btn.jpg';
@@ -127,9 +128,10 @@ class SelectJob extends Component {
           <div className={classNames("focus_border", this.state.isOthers)}></div>
         </div>
 
-        <div className={classNames("init_task_complete_btn", this.state.isSelected)} onClick={this.selectComplete}>
-          <span className="center_in_parent">선택 완료</span>
-        </div>
+        <InitCompleteBtn 
+          btnContent="선택 완료"
+          disable={this.state.isSelected}
+          onClickEvent={this.selectComplete} />
       </div>
     );
   }

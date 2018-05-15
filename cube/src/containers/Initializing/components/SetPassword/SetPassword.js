@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
+import InitCompleteBtn from '../InitCompleteBtn/InitCompleteBtn';
 import { withRouter } from 'react-router-dom';
 import { StyleInput } from '../../../../components';
 import './SetPassword.css';
@@ -108,9 +109,10 @@ class SetPassword extends Component {
             })()} />
         </div>
 
-        <div className={classNames("init_task_complete_btn", this.isSetPasswordComplete())} onClick={this.setPasswordComplete}>
-          <span className="center_in_parent">설정 완료</span>
-        </div>
+        <InitCompleteBtn
+          btnContent="설정 완료"
+          disable={this.isSetPasswordComplete()}
+          onClickEvent={this.setPasswordComplete} />
       </div>
     );
   }

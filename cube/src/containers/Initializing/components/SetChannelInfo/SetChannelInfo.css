@@ -2,3 +2,26 @@
   height: calc(100vh - 50px);
   margin-top: 50px;
 }
+
+#get_channel_info_result {
+  width: 300px;
+  margin: auto;
+  margin-top: 40px;
+}
+
+.channel_info {
+  font-size: 15px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.channel_info span {
+  font-weight: 300;
+}
+
+#loading {
+  width: 57px;
+  margin: auto;
+  margin-top: 60px;
+}
