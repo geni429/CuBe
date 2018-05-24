@@ -25,3 +25,8 @@
   margin: auto;
   margin-top: 60px;
 }
+
+.channel_info_card .channel_profile_img {
+  float: left;
+}
+

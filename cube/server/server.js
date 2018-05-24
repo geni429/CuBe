@@ -38,7 +38,8 @@ const start = async () => {
         channelName: '',
         subscriberCount: '',
         views: '',
-        registerDate: ''
+        registerDate: '',
+        profileImgSrc: ''
       }
 
       function parsingAboutData() {
@@ -55,11 +56,15 @@ const start = async () => {
 
             const dom = new JSDOM(body).window.document;
 
+            console.log(dom.querySelector('#gh-banner'));
+
             let channelName = dom.querySelector('.qualified-channel-title-text a').textContent;
             let subscriberCount = dom.querySelectorAll('.about-stats .about-stat')[0].textContent;
             let views = dom.querySelectorAll('.about-stats .about-stat')[1].textContent;
             let registerDate = dom.querySelectorAll('.about-stats .about-stat')[2].textContent;
             let registerDateArr = registerDate.replace(/\./gi, '').split(' ');
+            let profileImgSrc = dom.querySelector('.appbar-nav-avatar').getAttribute('src');
+            let bannerImg;
 
             channelInfo.channelName = channelName;
             channelInfo.subscriberCount = subscriberCount.split(' ')[1].replace(/명/, '');
@@ -69,6 +74,7 @@ const start = async () => {
               month: registerDateArr[2],
               day: registerDateArr[3]
             };
+            channelInfo.profileImgSrc = profileImgSrc;
 
             resolve(channelInfo);
           });

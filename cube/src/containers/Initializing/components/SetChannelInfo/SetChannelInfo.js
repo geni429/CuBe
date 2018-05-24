@@ -18,7 +18,8 @@ class SetChannelInfo extends Component {
       channelInfo: {
         channelName: '',
         subscriberCount: '',
-        views: ''
+        views: '',
+        profileImgSrc: ''
       }
     }
 
@@ -53,7 +54,7 @@ class SetChannelInfo extends Component {
         this.setState({
           isLoading: false,
           isLoadingComplete: true,
-          channelInfo: response.data
+          channelInfo: response.data,
         });
       }).catch(err => {
         console.log(err);
@@ -75,9 +76,16 @@ class SetChannelInfo extends Component {
           <Loading isLoading={this.state.isLoading} /> 
           : <InitCompleteBtn btnContent="불러오기" disable={this.state.isChannelLink} onClickEvent={this.getChannelInfo} />}
         <div id="get_channel_info_result" className={this.state.isLoadingComplete ? '' : 'ds_none'}>
-          <div className="channel_info">채널명: <span>{this.state.channelInfo.channelName}</span></div>
-          <div className="channel_info">구독자 수: <span>{this.state.channelInfo.subscriberCount}</span></div>
-          <div className="channel_info">총 조회수: <span>{this.state.channelInfo.views}</span></div>
+          <div className="channel_info_card">
+            <div className="channel_profile_img">
+              <img src={this.state.channelInfo.profileImgSrc} />
+            </div>
+            <div className="channel_profile_info">
+              <div className="channel_info">채널명: <span>{this.state.channelInfo.channelName}</span></div>
+              <div className="channel_info">구독자 수: <span>{this.state.channelInfo.subscriberCount}</span></div>
+              <div className="channel_info">총 조회수: <span>{this.state.channelInfo.views}</span></div>
+            </div>
+          </div>
         </div>
       </div>
     );

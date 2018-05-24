@@ -10,8 +10,9 @@ class Main extends Component {
     super(props);
 
     this.state = {
-      email: "",
-      isEmail: ""
+      email: '',
+      isEmail: '',
+      isGoogle: 'ds_none'
     }
 
     this.isEmail = this.isEmail.bind(this);
@@ -21,22 +22,20 @@ class Main extends Component {
   }
 
   inputStartEmail(e) {
-    console.log(e.target.value);
     if (e.target.value) {
-      console.log(this.isEmail(e.target.value));
       if (this.isEmail(e.target.value)) {
         this.setState({
           email: e.target.value,
-          isEmail: "email_form_correct"
+          isEmail: 'email_form_correct'
         });
       } else {
         this.setState({
-          isEmail: "email_form_uncorrect"
+          isEmail: 'email_form_uncorrect'
         });
       }
     } else {
       this.setState({
-        isEmail: "email_form_correct"
+        isEmail: 'email_form_correct'
       });
     }
   }
@@ -46,15 +45,20 @@ class Main extends Component {
     return regex.test(String(value).toLowerCase());
   }
 
-  inputBlur() {
+  inputBlur(e) {
     this.setState({
-      isEmail: ""
+      isEmail: ''
+    });
+
+    if (!e.target.value) this.setState({
+      isGoogle: 'ds_none'
     });
   }
 
   inputFocus() {
     this.setState({
-      isEmail: "email_form_correct"
+      isEmail: "email_form_correct",
+      isGoogle: ''
     });
   }
 
@@ -74,11 +78,15 @@ class Main extends Component {
             트렌드를 빠르게 파악하여 높은 가치의 창작물을 구독자에게 제공하세요
           </div>
           <div id="main_part_1_get_start">
+            <div id="main_part_1_get_start_by_google">
+              <div className="g-signin2" data-onsuccess="onSignIn"></div>
+              <div>OR</div>
+            </div>
             <div id="main_part_1_get_start_email">
               <input placeholder="name@company.com" className={this.state.isEmail} onChange={this.inputStartEmail} onBlur={this.inputBlur} onFocus={this.inputFocus} />
             </div>
             <Link to={`/verify/${this.state.email}`}>
-              <div id="main_part_1_get_start_submit">
+              <div id="main_part_1_get_start_submit" className={this.state.isGoogle}>
                 <span className="center_in_parent">시작하기</span>
               </div>
             </Link>
