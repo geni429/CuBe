@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import { TopNavigationBar } from '../../components';
 import mainPart1BgImage from '../../res/main_part_1.jpg';
 import './Main.css';
@@ -96,5 +97,9 @@ class Main extends Component {
     );
   }
 }
+
+Main = connect(state => {
+  email: state.email.data
+})();
 
 export default Main;
