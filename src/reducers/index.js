@@ -1,4 +1,4 @@
-import { USER_EMAIL } from './actions';
+import { USER_EMAIL } from '../actions';
 import { combineReducers } from 'redux';
 
 const initialState = {
