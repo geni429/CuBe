@@ -98,8 +98,8 @@ class Main extends Component {
   }
 }
 
-Main = connect(state => {
-  email: state.email.data
-})();
+// Main = connect(state => {
+//   email: state.email.data
+// })();
 
 export default Main;
