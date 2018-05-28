@@ -8,8 +8,6 @@ import { TopNavigationBar } from './components';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import registerServiceWorker from './registerServiceWorker';
 
-const store = createStore(CubeReducer);
-
 ReactDOM.render(
   <Router>
     <Fragment>
