@@ -9,8 +9,7 @@ const jsdom = require('jsdom');
 const { JSDOM } = jsdom;
 
 const server = new Hapi.Server({
-  port: 3000 || process.env.PORT,
-  host: 'localhost'
+  port: process.env.PORT
 });
 
 const start = async () => {
