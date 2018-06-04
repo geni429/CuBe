@@ -72,7 +72,7 @@ class Main extends Component {
         <div id="main_part_1_bg_cover"></div>
         <div id="main_part_1_introduce" className={classNames("center_vertical", "align_parent_right")}>
           <div id="main_part_1_introduce_title">
-            CuBe와 함께 YouTube 채널을<br />성공적으로 운영해보세요
+            CuBe와 함께 YouTube 채널을<br />성공적으로 운영해보세요!
           </div>
           <div id="main_part_1_introduce_content">
             CuBe를 통해 YouTube 채널에서 꼭 필요한 전문가들을 만나고<br />
