@@ -19,6 +19,7 @@ class Main extends Component {
     this.inputStartEmail = this.inputStartEmail.bind(this);
     this.inputBlur = this.inputBlur.bind(this);
     this.inputFocus = this.inputFocus.bind(this);
+    this.onGoogleSignIn = this.onGoogleSignIn.bind(this);
   }
 
   inputStartEmail(e) {
@@ -62,6 +63,21 @@ class Main extends Component {
     });
   }
 
+  onGoogleSignIn(googleUser) {
+    let profile = googleUser.getBasicProfile();
+
+    console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+    console.log('Full Name: ' + profile.getName());
+    console.log('Given Name: ' + profile.getGivenName());
+    console.log('Family Name: ' + profile.getFamilyName());
+    console.log("Image URL: " + profile.getImageUrl());
+    console.log("Email: " + profile.getEmail());
+
+    // The ID token you need to pass to your backend:
+    let id_token = googleUser.getAuthResponse().id_token;
+    console.log("ID Token: " + id_token);
+  }
+
   render() {
     return (
       <div id="main_part_1">
@@ -79,7 +95,7 @@ class Main extends Component {
           </div>
           <div id="main_part_1_get_start">
             <div id="main_part_1_get_start_by_google">
-              <div className="g-signin2" data-onsuccess="onSignIn"></div>
+              <div className="g-signin2" data-onsuccess={this.onGoogleSignIn}></div>
               <div>OR</div>
             </div>
             <div id="main_part_1_get_start_email">
