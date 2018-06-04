@@ -1,7 +1,5 @@
 import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
-import { createStore } from 'redux';
-import CubeReducer from './reducers';
 import './index.css';
 import { Main, SignIn, Verifying, Initializing } from './containers';
 import { TopNavigationBar } from './components';
