@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import { TopNavigationBar } from '../../components';
@@ -73,8 +74,21 @@ class Main extends Component {
     console.log("Image URL: " + profile.getImageUrl());
     console.log("Email: " + profile.getEmail());
 
-    // The ID token you need to pass to your backend:
     let id_token = googleUser.getAuthResponse().id_token;
+
+    axios({
+      method: 'POST',
+      url: '/google-signin',
+      data: {
+        fullName: profile.getName(),
+        givenName: profile.getGivenName(),
+        familyName: profile.getFamilyName(),
+        email: profile.getEmail(),
+        id_token: id_token
+      }
+    });
+
+    // The ID token you need to pass to your backend:
     console.log("ID Token: " + id_token);
   }
 

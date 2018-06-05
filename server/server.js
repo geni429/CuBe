@@ -28,6 +28,16 @@ const start = async () => {
   });
 
   server.route({
+    method: 'POST',
+    path: '/google-signin',
+    handler: async (request, h) => {
+      await console.log(request.payload);
+
+      return h.response('hello!').code(200);
+    }
+  });
+
+  server.route({
     method: 'GET',
     path: '/channel',
     handler: async (request, h) => {
