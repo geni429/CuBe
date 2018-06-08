@@ -53,6 +53,7 @@ const start = async () => {
 
       await smtpTransport.sendMail(mailOptions, (error, response) => {
         console.log(`send to ${response.envelope.to[0]}`);
+        if (error) isError = true;
       });
 
       if (isError) return h.response('Error').code(500);

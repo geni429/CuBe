@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import classNames from 'classnames';
+import GoogleLogin from 'react-google-login';
 import { Link, withRouter } from 'react-router-dom';
 import { TopNavigationBar } from '../../components';
 import mainPart1BgImage from '../../res/main_part_1.jpg';
@@ -65,32 +66,8 @@ class Main extends Component {
     });
   }
 
-  onGoogleSignIn(googleUser) {
-    let profile = googleUser.getBasicProfile();
-
-    console.log("ID: " + profile.getId()); // Don't send this directly to your server!
-    console.log('Full Name: ' + profile.getName());
-    console.log('Given Name: ' + profile.getGivenName());
-    console.log('Family Name: ' + profile.getFamilyName());
-    console.log("Image URL: " + profile.getImageUrl());
-    console.log("Email: " + profile.getEmail());
-
-    let id_token = googleUser.getAuthResponse().id_token;
-
-    axios({
-      method: 'POST',
-      url: '/google-signin',
-      data: {
-        fullName: profile.getName(),
-        givenName: profile.getGivenName(),
-        familyName: profile.getFamilyName(),
-        email: profile.getEmail(),
-        id_token: id_token
-      }
-    });
-
-    // The ID token you need to pass to your backend:
-    console.log("ID Token: " + id_token);
+  onGoogleSignIn(response) {
+    console.log(response);
   }
 
   verifyEmail() {
@@ -125,7 +102,12 @@ class Main extends Component {
           </div>
           <div id="main_part_1_get_start">
             <div id="main_part_1_get_start_by_google">
-              <div className="g-signin2" data-onsuccess={this.onGoogleSignIn}></div>
+              <GoogleLogin
+                clientId="580427032589-gk5t3uf8kml3vsb32siht409i55tjkk6.apps.googleusercontent.com"
+                buttonText="Login"
+                onSuccess={this.onGoogleSignIn}
+                onFailure={this.onGoogleSignIn}
+              />
               <div>OR</div>
             </div>
             <div id="main_part_1_get_start_email">
