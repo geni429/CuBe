@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import classNames from 'classnames';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { TopNavigationBar } from '../../components';
 import mainPart1BgImage from '../../res/main_part_1.jpg';
 import './Main.css';
@@ -21,6 +21,7 @@ class Main extends Component {
     this.inputBlur = this.inputBlur.bind(this);
     this.inputFocus = this.inputFocus.bind(this);
     this.onGoogleSignIn = this.onGoogleSignIn.bind(this);
+    this.verifyEmail = this.verifyEmail.bind(this);
   }
 
   inputStartEmail(e) {
@@ -92,6 +93,21 @@ class Main extends Component {
     console.log("ID Token: " + id_token);
   }
 
+  verifyEmail() {
+    axios({
+      method: 'POST',
+      url: '/email',
+      data: {
+        email: this.state.email
+      }
+    }).then(response => {
+      console.log(response);
+      this.props.history.push(`/verify/${this.state.email}`);
+    }).catch(error => {
+      console.log(error);
+    });
+  }
+
   render() {
     return (
       <div id="main_part_1">
@@ -115,11 +131,9 @@ class Main extends Component {
             <div id="main_part_1_get_start_email">
               <input placeholder="name@company.com" className={this.state.isEmail} onChange={this.inputStartEmail} onBlur={this.inputBlur} onFocus={this.inputFocus} />
             </div>
-            <Link to={`/verify/${this.state.email}`}>
-              <div id="main_part_1_get_start_submit" className={this.state.isGoogle}>
-                <span className="center_in_parent">시작하기</span>
-              </div>
-            </Link>
+            <div id="main_part_1_get_start_submit" className={this.state.isGoogle} onClick={this.verifyEmail}>
+              <span className="center_in_parent">시작하기</span>
+            </div>
           </div>
         </div>
       </div>
@@ -127,4 +141,4 @@ class Main extends Component {
   }
 }
 
-export default Main;
+export default withRouter(Main);

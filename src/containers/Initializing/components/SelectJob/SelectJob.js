@@ -75,7 +75,7 @@ class SelectJob extends Component {
 
   selectComplete() {
     if (this.state.isSelected) 
-      this.props.history.push('/init/password');
+      this.props.history.push('/init/channel');
   }
 
   render() {

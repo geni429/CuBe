@@ -5,11 +5,21 @@ const path = require('path');
 const Inert = require('inert');
 const fs = require('fs');
 const Request = require('request');
+const nodemailer = require('nodemailer');
 const jsdom = require('jsdom');
 const { JSDOM } = jsdom;
 
 const server = new Hapi.Server({
-  port: process.env.PORT
+  port: process.env.PORT || 3000
+  // host: 'localhost'
+});
+
+let smtpTransport = nodemailer.createTransport({
+  service: 'Gmail',
+  auth: {
+    user: 'geni.cube.429@gmail.com',
+    pass: 'happyday0429?'
+  }
 });
 
 const start = async () => {
@@ -24,6 +34,29 @@ const start = async () => {
         listing: false,
         index: true
       }
+    }
+  });
+
+  let mailOptions;
+
+  server.route({
+    method: 'POST',
+    path: '/email',
+    handler: async (request, h) => {
+      mailOptions = {
+        to: request.payload.email,
+        subject: 'Please confirm your Email account [CuBe]',
+        html: '<a href="http://localhost:3000/init/password">인증 완료</a>'
+      }
+
+      let isError = false;
+
+      await smtpTransport.sendMail(mailOptions, (error, response) => {
+        console.log(`send to ${response.envelope.to[0]}`);
+      });
+
+      if (isError) return h.response('Error').code(500);
+      return h.response('Email send success').code(200);
     }
   });
 

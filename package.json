@@ -1,6 +1,6 @@
 {
   "name": "cube",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "CuBe is the best solution for creator.",
   "repository": "https://github.com/geni429/CuBe",
   "author": "geni429 <geni429@gmail.com>",
@@ -26,6 +26,7 @@
     "inert": "^5.1.0",
     "jsdom": "^11.10.0",
     "mongoose": "^5.0.16",
+    "nodemailer": "^4.6.5",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
     "react-redux": "^5.0.7",

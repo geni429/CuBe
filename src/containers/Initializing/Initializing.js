@@ -9,7 +9,7 @@ class Initializing extends Component {
       <Switch>
         <Route path='/init/job' component={ SelectJob } />
         <Route path='/init/password' component={ SetPassword } />
-        <Route path='/init/channel' component={SetChannelInfo } />
+        <Route path='/init/channel' component={ SetChannelInfo } />
       </Switch>
     );
   }
