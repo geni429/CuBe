@@ -11,7 +11,7 @@ const { JSDOM } = jsdom;
 
 const server = new Hapi.Server({
   port: process.env.PORT || 3000,
-  host: 'localhost'
+  // host: 'localhost'
 });
 
 let smtpTransport = nodemailer.createTransport({
