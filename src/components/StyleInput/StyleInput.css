@@ -1,9 +1,9 @@
 .style_input {
+  display: inline-block;
   position: relative;
 }
 
 .style_input input {
-  width: 100%;
   font-size: 15px;
   outline: none;
   border: 0;
@@ -22,6 +22,7 @@
   background-color: #3399FF;
   position: absolute;
   left: 0;
+  bottom: 0;
   transition: .3s;
 }
 

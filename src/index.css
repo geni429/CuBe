@@ -91,6 +91,15 @@ a {
   color: #fff;
 }
 
+.header-title-1 {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.header-sub-title-1 {
+  font-size: 19px;
+}
+
 /* Display style */
 
 .ds-none { display: none !important; }
