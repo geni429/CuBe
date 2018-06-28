@@ -1,3 +1,10 @@
+/* CSS rule */
+/* Writing priority. */
+/* 1: display */
+/* 2: position css(position, z-index, transform, align) */
+/* 3: box wire style(width, height, border, margin, padding) */
+/* 4: box background, inner style(background, opacitiy, shadow, font) */
+
 body {
   margin: 0;
   padding: 0;
@@ -11,46 +18,46 @@ a {
 .container {
   width: 1170px;
   margin: auto;
+  margin-top: 50px;
 }
 
-
-/* Relative layout */
+/* Relative layout style */
 /* 1) Element must child element. */
 /* 2) Parent element position must relative. */
-.align_parent_top {
+.align-parent-top {
   position: absolute;
   top: 0;
 }
 
-.align_parent_bottom {
+.align-parent-bottom {
   position: absolute;
   bottom: 0;
 }
 
-.align_parent_left {
+.align-parent-left {
   position: absolute;
   left: 0;
 }
 
-.align_parent_right {
+.align-parent-right {
   position: absolute;
   right: 0;
 }
 
-.center_in_parent {
+.center-in-parent {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-.center_horizontal {
+.center-horizontal {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
 }
 
-.center_vertical {
+.center-vertical {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -59,20 +66,31 @@ a {
 /* Font */
 
 /* Primary font white */
-.pr_ft_white {
+.pr-ft-white {
   font-size: 16px;
   color: #fff;
 }
 
-.ft_bold { font-weight: bold; }
+.ft-bold { font-weight: bold; }
 
-.wh_line {
+.wh-line {
   width: 100%;
   height: 1px;
-  background: #fff;
   margin-bottom: 5px;
+  background-color: #fff;
 }
 
-.ds_none {
-  display: none !important;
+.header-title-1-wh {
+  font-size: 40px;
+  font-weight: bold;
+  color: #fff;
 }
+
+.header-sub-title-1-wh {
+  font-size: 19px;
+  color: #fff;
+}
+
+/* Display style */
+
+.ds-none { display: none !important; }

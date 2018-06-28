@@ -1,112 +1,92 @@
-#main_part_1 {
+#main-1 {
+  position: relative;
   width: 100%;
   height: 100vh;
   min-width: 1440px;
   min-height: 590px;
   overflow: hidden;
-  position: relative;
 }
 
-#main_part_1_bg_img {
+#main-1-bg-img {
+  position: absolute;
   width: 100%;
   height: 100%;
-  position: absolute;
 }
 
-#main_part_1_bg_img img {
-  width: 100%;
+#main-1-bg-img img {
   position: absolute;
   bottom: 0;
+  width: 100%;
 }
 
-#main_part_1_bg_cover {
+#main-1-bg-cover {
+  position: absolute;
+  z-index: 2;
   width: 100%;
   height: 100%;
-  position: absolute;
   background-color: rgb(185, 79, 85);
   opacity: .5;
-  z-index: 2;
 }
 
-#main_part_1_introduce {
-  margin-right: 50px;
-  color: #fff;
+#main-1-introduce {
   text-align: right;
   z-index: 3;
+  margin-right: 50px;
 }
 
-#main_part_1_introduce_title {
-  font-size: 40px;
-  font-weight: bold;
-}
-
-#main_part_1_introduce_content {
-  font-size: 19px;
+#main-1-introduce-content {
   margin-top: 10px;
 }
 
-#main_part_1_get_start {
+#main-1-get-start {
   margin-top: 50px;
 }
 
-#main_part_1_get_start_by_google {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-#main_part_1_get_start_by_google div {
-  display: inline-block;
-}
-
-#main_part_1_get_start_by_google div:nth-of-type(2) {
-  margin-left: 15px;
-  margin-right: 15px;
-}
-
-#main_part_1_get_start_email {
+#main-1-get-start-email {
   display: inline-block;
   vertical-align: middle;
   margin-right: 10px;
 }
 
-#main_part_1_get_start_email > input {
+#main-1-get-start-email > input {
   width: 186px;
   height: 31px;
   border: 2px solid rgb(146, 146, 146);
   border-radius: 5px;
-  padding-left: 10px;
-  color: rgb(110, 110, 110);
-  font-size: 14px;
   outline: none;
+  padding-left: 10px;
+  font-size: 14px;
+  color: rgb(110, 110, 110);
   transition: .3s;
 }
 
-#main_part_1_get_start_email > input::placeholder {
+#main-1-get-start-email > input::placeholder {
   color: rgb(192, 192, 192);
 }
 
-#main_part_1_get_start_submit {
+#main-1-get-start-submit {
   display: inline-block;
+  position: relative;
+  vertical-align: middle;
   width: 130px;
   height: 35px;
-  vertical-align: middle;
-  position: relative;
-  font-size: 13px;
-  background-color: rgb(5, 130, 247);
   border-radius: 5px;
+  background-color: rgb(5, 130, 247);
+  font-size: 13px;
+  color: #fff;
 }
 
-#main_part_1_get_start_submit:hover {
+#main-1-get-start-submit:hover {
   cursor: pointer;
 }
 
-.email_form_correct {
+.email-form-correct {
   border-color: rgb(5, 130, 247) !important;
   color: rgb(5, 130, 247) !important;
   transition: .3s;
 }
 
-.email_form_uncorrect {
+.email-form-uncorrect {
   border-color: rgb(185, 79, 85) !important;
   color: rgb(185, 79, 85) !important;
   transition: .3s;
