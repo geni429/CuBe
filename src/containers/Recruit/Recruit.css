@@ -11,7 +11,7 @@
 #recruit > header select {
   width: 150px;
   height: 30px;
-  border: 0.5px solid #ddd;
+  border: 1px solid #ddd;
   outline: none;
   margin-right: 20px;
   background-color: #fff;
@@ -30,7 +30,7 @@
 .director-search-btn {
   width: 48px;
   height: 25px;
-  border: 0.5px solid #ddd;
+  border: 1px solid #ddd;
   margin-left: 10px;
   outline: 0;
 }
@@ -46,7 +46,7 @@
 .recruit-card {
   width: 199px;
   height: 199px;
-  border: 0.5px solid #ddd;
+  border: 1px solid #ddd;
   margin: 10px;
   float: left;
 }
