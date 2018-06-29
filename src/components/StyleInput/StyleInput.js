@@ -3,20 +3,13 @@ import classNames from 'classnames';
 import './StyleInput.css';
 
 class StyleInput extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      isFocus: '',
-      isBlur: '',
-      isError: ''
-    }
-
-    this.inputFocusStyle = this.inputFocusStyle.bind(this);
-    this.inputBlurStyle = this.inputBlurStyle.bind(this);
+  state = {
+    isFocus: '',
+    isBlur: '',
+    isError: ''
   }
 
-  inputFocusStyle(e) {
+  inputFocusStyle = (e) => {
     if (e.target.value.length > 0) {
       this.setState({
         isFocus: 'input_focus_event_c'
@@ -28,7 +21,7 @@ class StyleInput extends Component {
     }
   }
 
-  inputBlurStyle(e) {
+  inputBlurStyle = (e) => {
     if (e.target.value.length > 0) {
       this.setState({
         isFocus: '',

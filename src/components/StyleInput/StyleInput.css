@@ -4,11 +4,11 @@
 }
 
 .style_input input {
-  font-size: 15px;
-  outline: none;
   border: 0;
   border-bottom: 1px solid #ccc;
+  outline: none;
   padding-bottom: 5px;
+  font-size: 15px;
 }
 
 .style_input input:focus ~ .input_line {
@@ -17,21 +17,21 @@
 }
 
 .input_line {
-  width: 0;
-  height: 2px;
-  background-color: #3399FF;
   position: absolute;
   left: 0;
   bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #3399FF;
   transition: .3s;
 }
 
 .input_header {
+  position: absolute;
+  left: 0;
+  bottom: 5px;
   font-size: 15px;
   color: rgb(117, 117, 117);
-  position: absolute;
-  bottom: 5px;
-  left: 0;
   pointer-events: none;
   transform-origin: bottom left;
   transition: .3s;
