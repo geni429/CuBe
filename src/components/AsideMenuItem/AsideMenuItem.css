@@ -1,0 +1,12 @@
+.my-page-aside-menu-item {
+  position: relative;
+  width: calc(100% - 8px);
+  height: 38px;
+  border: 1px solid #ddd;
+  margin-top: 10px;
+  padding-left: 10px;
+}
+
+.my-page-aside-menu-item:hover {
+  cursor: pointer;
+}

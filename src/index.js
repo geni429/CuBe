@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { Main, SignIn, Verifying, Initializing, Recruit, RecruitInfo } from './containers';
+import { Main, SignIn, Verifying, Initializing, Recruit, RecruitInfo, MyPage } from './containers';
 import { TopNavigationBar } from './components';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import registerServiceWorker from './registerServiceWorker';
@@ -16,6 +16,7 @@ ReactDOM.render(
         <Route path='/verify/:email' component={Verifying} />
         <Route path='/recruit' component={Recruit} exact />
         <Route path='/recruit/info/:id' component={RecruitInfo} />
+        <Route path='/mypage' component={MyPage} />
         <Initializing />
       </Fragment>
     </Fragment>

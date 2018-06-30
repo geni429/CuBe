@@ -1,4 +1,5 @@
-import TopNavigationBar from './TopNavigationBar/TopNavigationBar';
+import AsideMenuItem from './AsideMenuItem/AsideMenuItem';
 import StyleInput from './StyleInput/StyleInput';
+import TopNavigationBar from './TopNavigationBar/TopNavigationBar';
 
-export { TopNavigationBar, StyleInput };
+export { AsideMenuItem, StyleInput, TopNavigationBar };
