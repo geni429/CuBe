@@ -1,24 +1,20 @@
 import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { Main, SignIn, Verifying, Initializing, Recruit, RecruitInfo, MyPage } from './containers';
-import { TopNavigationBar } from './components';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Main, SignIn, Verifying, Initializing, Recruit, RecruitInfo, Management } from './containers';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
   <Router>
     <Fragment>
-      <TopNavigationBar />
-      <Fragment>
-        <Route path='/' component={Main} exact />
-        <Route path='/signin' component={SignIn} />
-        <Route path='/verify/:email' component={Verifying} />
-        <Route path='/recruit' component={Recruit} exact />
-        <Route path='/recruit/info/:id' component={RecruitInfo} />
-        <Route path='/mypage' component={MyPage} />
-        <Initializing />
-      </Fragment>
+      <Route path='/' component={Main} exact />
+      <Route path='/user/signin' component={SignIn} />
+      <Route path='/user/verify/:email' component={Verifying} />
+      <Route path='/management' component={Management} exact />
+      <Route path='/management/recruit' component={Recruit} exact />
+      <Route path='/management/recruit/info/:id' component={RecruitInfo} />
+      <Initializing />
     </Fragment>
   </Router>
 , document.getElementById('root'));

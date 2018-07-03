@@ -1,0 +1,6 @@
+#management {
+  float: left;
+  width: calc(100% - 370px);
+  height: 40vh;
+  background-color: azure;
+}
